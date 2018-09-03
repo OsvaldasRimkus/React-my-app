@@ -11,7 +11,7 @@ interface TestingComponentProps {
 
 class TestingComponent extends React.Component<TestingComponentProps> {
 
-    constructor(props:any) {
+    constructor(props:TestingComponentProps) {
         super(props);
     }
 

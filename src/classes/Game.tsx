@@ -13,6 +13,7 @@ interface GameState {
   history: [];
   xIsNext: boolean;
   stepNumber: number;
+  counterList: any;
 }
 
 
@@ -57,6 +58,7 @@ class Game extends React.Component<GameProps, GameState> {
       }],
       xIsNext: true,
       stepNumber: 0,
+      counterList: [<Counter />,],
     };
   }
 
@@ -83,6 +85,14 @@ class Game extends React.Component<GameProps, GameState> {
       stepNumber: step,
       xIsNext: (step % 2) === 0,
     });
+  }
+
+  addCounter() {
+    // let counters = this.state.counterList;
+    let newArray = Array(this.state.counterList.length + 1).fill(<Counter/>);
+    console.log("new array");
+    console.log(newArray);
+    this.setState({counterList: newArray});
   }
 
     public render() {
@@ -144,7 +154,8 @@ class Game extends React.Component<GameProps, GameState> {
           </div>
           <br />
           <div>
-            <Counter />
+            <button onClick={(e) => this.addCounter()}>add counter</button>
+            {this.state.counterList}
           </div>
           
         </div>

@@ -23,7 +23,7 @@ const tableStyle = {
 
 class UserList extends React.Component<UserListProps, UserListState> {
 
-    constructor(props: any) {
+    constructor(props: UserListProps) {
         super(props);
         this.state = {
             userList: [],
@@ -57,6 +57,7 @@ class UserList extends React.Component<UserListProps, UserListState> {
                         </tr>
                         {this.state.userList.map(person => 
                             <User 
+                                key={person.id}
                                 id={person.id}
                                 name={person.name} 
                                 onClick={(name, i) => this.handleClick(name, i)}

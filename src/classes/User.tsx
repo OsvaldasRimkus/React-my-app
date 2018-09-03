@@ -19,7 +19,7 @@ const rowStyle = {
 
 class User extends React.Component<UserProps, UserState> {
 
-    constructor(props: any) {
+    constructor(props: UserProps) {
         super(props);
         this.state = {
             id: -1, 

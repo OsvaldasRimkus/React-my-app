@@ -9,7 +9,7 @@ class Square extends React.Component<SquareProps, {}> {
     
     state: any;
 
-    constructor(props: any){
+    constructor(props: SquareProps){
         super(props);
         this.state = {
             value: this.props.value,
