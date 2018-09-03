@@ -10,7 +10,8 @@ interface LinkState {
 }
 
 interface LinkProps {
-  page: string
+  text: string,
+  page: string,
 }
 
 export default class Link extends React.Component<LinkProps, LinkState> {
@@ -41,7 +42,7 @@ export default class Link extends React.Component<LinkProps, LinkState> {
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
       >
-        {this.props.children}
+        {this.props.text}
       </a>
     );
   }

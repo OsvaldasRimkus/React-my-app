@@ -4,6 +4,7 @@ import UserList from './UserList';
 import Form from './Form';
 import TestingComponent from './TestingComponent'
 import Counter from './Counter';
+import Link from './testings/Link';
 
 interface GameProps {
 
@@ -58,7 +59,7 @@ class Game extends React.Component<GameProps, GameState> {
       }],
       xIsNext: true,
       stepNumber: 0,
-      counterList: [<Counter />,],
+      counterList: [<Counter key={0} />,],
     };
   }
 
@@ -88,9 +89,18 @@ class Game extends React.Component<GameProps, GameState> {
   }
 
   addCounter() {
-    // let counters = this.state.counterList;
-    let newArray = Array(this.state.counterList.length + 1).fill(<Counter/>);
+    // let newArray = Array(this.state.counterList.length + 1).fill(<Counter />);
+    // console.log(newArray);
+    // this.setState({counterList: newArray});
+
+    let counters = this.state.counterList;
     console.log("new array");
+    let length = counters.length;
+    let newArray:React.ReactNode[] = [];
+    console.log('before for ');
+    for (let i = 0; i <= length; i++) {
+      newArray.push(<Counter key={i}/>)
+    }
     console.log(newArray);
     this.setState({counterList: newArray});
   }
@@ -145,7 +155,7 @@ class Game extends React.Component<GameProps, GameState> {
           <div>
             <UserList />
           </div>
-          <div>
+          <div style={{border: '1px solid black'}}>
             <Form />
             <span>TASK: {this.state.taskDescription}</span>  
           </div>
@@ -157,7 +167,7 @@ class Game extends React.Component<GameProps, GameState> {
             <button onClick={(e) => this.addCounter()}>add counter</button>
             {this.state.counterList}
           </div>
-          
+          <Link text={'go Google!'} page={'http://www.google.lt'}/>
         </div>
       );
     }

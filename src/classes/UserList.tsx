@@ -46,7 +46,7 @@ class UserList extends React.Component<UserListProps, UserListState> {
     }
 
     public render() {
-        console.log(this.state.userList);
+        // console.log(this.state.userList);
         return (
             <div>
                 <table style={tableStyle}>
@@ -67,7 +67,6 @@ class UserList extends React.Component<UserListProps, UserListState> {
                 </table>
                 <Details userName={this.state.selectedUser} userId={this.state.selectedUserId}/>
             </div>
-               
         )
     }
 }
