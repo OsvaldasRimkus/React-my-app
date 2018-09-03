@@ -105,6 +105,19 @@ class Game extends React.Component<GameProps, GameState> {
     this.setState({counterList: newArray});
   }
 
+    looping(): never {
+      while(true){
+      }
+    }
+
+    throwingError(): never {
+      throw new Error('Error thrown');
+    }
+
+    resolveInput() {
+      
+    }
+
     public render() {
       const history = this.state.history;
       const current = history[this.state.stepNumber];
@@ -155,9 +168,9 @@ class Game extends React.Component<GameProps, GameState> {
           <div>
             <UserList />
           </div>
-          <div style={{border: '1px solid black'}}>
-            <Form />
-            <span>TASK: {this.state.taskDescription}</span>  
+          <div style={{width:'200px', border: '1px solid black'}}>
+            <Form resolveInput={() => this.resolveInput()}/>
+            <span>TASK: {this.state.taskDescription}</span>
           </div>
           <div>
             <TestingComponent a={numA} b={numB} o={Operation}/>
@@ -167,7 +180,9 @@ class Game extends React.Component<GameProps, GameState> {
             <button onClick={(e) => this.addCounter()}>add counter</button>
             {this.state.counterList}
           </div>
-          <Link text={'go Google!'} page={'http://www.google.lt'}/>
+          <Link text={'go Google!'} page={'http://www.google.lt'}/> <br/>
+          <button style={{color: 'black', backgroundColor:'#CB2431'}} onClick={() => this.looping()}>infinity call</button> <br/>
+          <button style={{color: 'black', backgroundColor:'#CB2431'}} onClick={() => this.throwingError()}>throwing error</button> <br/>
         </div>
       );
     }

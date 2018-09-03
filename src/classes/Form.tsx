@@ -1,11 +1,11 @@
 import * as React from 'react';
 
 interface FormState {
-    id: number
+    id: number,
 }
 
 interface FormProps {
-
+    resolveInput: () => void,
 }
 
 class Form extends React.Component<FormProps, FormState> {
@@ -23,23 +23,28 @@ class Form extends React.Component<FormProps, FormState> {
         this.setState({id: value});
     }
 
+    handleSubmit(e: React.MouseEvent) {
+        e.preventDefault();
+        this.props.resolveInput();
+    }
+
     public render() {
         if (this.state.id !== -1) {
             return (
-                <div>
+                <span>
                     <span><b>EPIC FORM</b></span>
                     <form>
                         <label>
                             Name:
                             <input type="text" value={this.state.id} onChange={this.handleChange} />
                         </label>
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Submit" onClick={(e) => this.handleSubmit(e)} />
                     </form>
-                </div>
+                </span>
             )
         } else {
             return (
-                <div>
+                <span>
                     <span><b>EPIC FORM</b></span>
                     <form>
                         <label>
@@ -48,7 +53,7 @@ class Form extends React.Component<FormProps, FormState> {
                         </label>
                         <input type="submit" value="Submit" />
                     </form>
-                </div>
+                </span>
             )
         }
 

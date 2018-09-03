@@ -20,6 +20,11 @@ test("Adding 6 + 3 equals 9", () => {
       mathOperation(10, 2, 'divide');
     }).toThrow()
   })
+  test("Passing wrong data throws exception", () => {
+    expect(() => {
+      mathOperation(10, 2, 'divide');
+    }).toThrow()
+  })
 
   // test("Passing wrong data returns null", () => {
   //   expect(mathOperation(10, 2, 'divide')).toThrow()
