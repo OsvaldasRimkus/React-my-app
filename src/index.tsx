@@ -3,7 +3,8 @@ import * as ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
-import Game from './classes/Game';
+// import Game from './classes/Game';
+import MyRouter from './classes/MyRouter';
 
 
 
@@ -12,7 +13,8 @@ import Game from './classes/Game';
 // ========================================
 
 ReactDOM.render(
-  <Game />,
+  // <Game />,
+  <MyRouter />,
   document.getElementById('root')
 );
 

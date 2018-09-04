@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Board from './Board';
-import UserList from './UserList';
-import Form from './Form';
+// import UserList from './UserList';
+// import Form from './Form';
 import TestingComponent from './TestingComponent'
 import Counter from './Counter';
 import Link from './testings/Link';
@@ -165,13 +165,13 @@ class Game extends React.Component<GameProps, GameState> {
               <ol>{moves}</ol>
             </div>
           </div>
-          <div>
+          {/* <div>
             <UserList />
-          </div>
-          <div style={{width:'200px', border: '1px solid black'}}>
+          </div> */}
+          {/* <div style={{width:'200px', border: '1px solid black'}}>
             <Form resolveInput={() => this.resolveInput()}/>
             <span>TASK: {this.state.taskDescription}</span>
-          </div>
+          </div> */}
           <div>
             <TestingComponent a={numA} b={numB} o={Operation}/>
           </div>

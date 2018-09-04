@@ -25,13 +25,13 @@ class Form extends React.Component<FormProps, FormState> {
 
     handleSubmit(e: React.MouseEvent) {
         e.preventDefault();
-        this.props.resolveInput();
+        // this.props.resolveInput();
     }
 
     public render() {
         if (this.state.id !== -1) {
             return (
-                <span>
+                <div style={{width:'200px', border: '1px solid black'}}>
                     <span><b>EPIC FORM</b></span>
                     <form>
                         <label>
@@ -40,11 +40,11 @@ class Form extends React.Component<FormProps, FormState> {
                         </label>
                         <input type="submit" value="Submit" onClick={(e) => this.handleSubmit(e)} />
                     </form>
-                </span>
+                </div>
             )
         } else {
             return (
-                <span>
+                <div style={{width:'200px', border: '1px solid black'}}>
                     <span><b>EPIC FORM</b></span>
                     <form>
                         <label>
@@ -53,7 +53,7 @@ class Form extends React.Component<FormProps, FormState> {
                         </label>
                         <input type="submit" value="Submit" />
                     </form>
-                </span>
+                </div>
             )
         }
 
